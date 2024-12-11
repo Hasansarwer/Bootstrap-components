@@ -140,5 +140,30 @@
         </div>
     </div>
 </div>
+<script>
+    // Adds click event listener to the send button
+    document.getElementById('sendButton').addEventListener('click', function () {
+        // Gets the values of the recipient and message
+        const recipient = document.getElementById('recipient-name').value.trim();
+        const message = document.getElementById('message-text').value.trim();
+        const alertMessage = document.getElementById('alertMessage');
+
+        // Checks if the recipient and message are not empty
+
+        if (recipient && message) {
+            // Sets the alert message to success
+            alertMessage.className = 'alert alert-success';
+            alertMessage.innerHTML = 'Message sent successfully!';
+        } else {
+            // Sets the alert message to danger
+            alertMessage.className = 'alert alert-danger';
+            alertMessage.innerHTML = 'Please fill in all fields!';
+        }
+
+        // Shows the alert message
+        alertMessage.classList.remove('d-none');
+    });
+
+</script>
 </body>
 </html>
